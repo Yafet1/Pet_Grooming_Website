@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+<ul>
+	{% for i in list %}
+	<!--li> {{ i.suggestion }}</li-->
+	{% endfor %}
+</ul>
+
+<form action="/service/" method="post">
+	{% csrf_token %}
+	{{form }}
+	
+
+	  <input type="submit" value="Save & Submit">
+	
+</form>
+
+
+{% endblock content %}
+
+

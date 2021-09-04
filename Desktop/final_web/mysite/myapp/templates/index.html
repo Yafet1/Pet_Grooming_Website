@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<div id="counter">
+	{% verbatim %}
+  Counter: {{ counter }}
+  {% endverbatim %}
+</div>
+
+<ul>
+	{% for i in list %}
+	<li> {{ i.suggestion }}</li>
+	{% endfor %}
+</ul>
+<form action="/" method="post">
+	{% csrf_token %}
+	{{form }}
+	  <input type="submit" value="Save & Submit">
+	}
+
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/vue@next"></script>
+<script src="{% static 'js/myvue.js' %}"></script>
+{% endblock %}
+
